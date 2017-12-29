@@ -17,7 +17,7 @@ import tensorflow as tf
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras import regularizers
-from keras.layers import Dense, Dropout#, MyDropout
+from keras.layers import Dense, Dropout
 from keras.optimizers import RMSprop, SGD
 from keras.wrappers.scikit_learn import KerasClassifier
 
@@ -139,17 +139,6 @@ history = model.fit(x_train, y_train,
                     batch_size=batch_size,
                     epochs=epochs,
                     verbose=1,
-                    validation_data=(nonredundant kernels in layer 0 is 275
-
- previous dropout rate of layer  0 is 0.737305
-
- current dropout rate of layer  0 is  0.731445
-
- nonredundant kernels in layer 2 is 161
-
- previous dropout rate of layer  2 is 0.845703
-
- current dropout rate of layer  2 is  0.842773
-x_test, y_test), callbacks=callbacks_list)
+                    validation_data=(x_test, y_test), callbacks=callbacks_list)
 
 print(max(history.history['val_acc']))
