@@ -49,7 +49,7 @@ class RedundancyDropoutCallback(keras.callbacks.Callback):
         for i in range(len(self.model.layers)-1):
             if type(self.model.layers[i])==Dense:
                 weight = self.model.layers[i].get_weights()[0]
-                normed_weight = normalize(weight, axis=1, norm='l2')
+                normed_weight = normalize(weight, axis=0, norm='l2')
                 ## Save the pairwise similarities in epochs 1, 5, 30, 60, 100, 150, 200
                 if epoch in {1, 5, 30, 60, 100, 150, 200}:
                     sim_matrix = np.dot(normed_weight.T,normed_weight)
